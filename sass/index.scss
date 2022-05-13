@@ -36,6 +36,7 @@ html {
     font-size: 62.5%;
     margin-top: var(--header-hight);
     font-family: 'Public Sans', sans-serif;
+    line-height: 1.5;
 }
 
 html * {
@@ -54,6 +55,10 @@ body {
     }
 }
 
+h1,h2,h3 {
+    line-height: 1.2;
+}
+
 .padding {
     padding: 0 3rem;
 }
@@ -70,6 +75,13 @@ body {
     background: var(--ctas-gradient);
     color: var(--white);
     text-decoration: none;
+}
+
+@mixin subtitle {
+    font-weight: 400;
+    color: var(--grayish-blue);
+    line-height: 1.5;
+    text-align: center;
 }
 
 .header {
@@ -172,11 +184,39 @@ body {
     }
 
     &__subtitle {
-        font-weight: 400;
-        color: var(--grayish-blue);
-        line-height: 1.5;
-        text-align: center;
+        @include subtitle;
     }
+
+    &__cta {
+        @include cta;
+    }
+}
+
+.features {
+    background-color: var(--very-light-gray);
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+    &__title {
+        font-size: 3rem;
+        font-weight: 300;
+        margin-bottom: 1.5rem;
+        color: var(--dark-blue);
+    }
+    &__description {
+        @include subtitle;
+    }
+
+    &__main, &__item {
+        margin-bottom: 4rem;
+    }
+
+    &__p {
+        @include subtitle;
+    }
+}
+
+.footer {
 
     &__cta {
         @include cta;
